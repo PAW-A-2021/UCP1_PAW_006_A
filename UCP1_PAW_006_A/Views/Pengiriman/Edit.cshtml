@@ -1,0 +1,49 @@
+﻿@model UCP1_PAW_006_A.Models.Pengiriman
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Pengiriman</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NoResi" />
+            <div class="form-group">
+                <label asp-for="IdPembayaran" class="control-label"></label>
+                <input asp-for="IdPembayaran" class="form-control" />
+                <span asp-validation-for="IdPembayaran" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusPengiriman" class="control-label"></label>
+                <input asp-for="StatusPengiriman" class="form-control" />
+                <span asp-validation-for="StatusPengiriman" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JenisPengiriman" class="control-label"></label>
+                <input asp-for="JenisPengiriman" class="form-control" />
+                <span asp-validation-for="JenisPengiriman" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlamatLengkap" class="control-label"></label>
+                <input asp-for="AlamatLengkap" class="form-control" />
+                <span asp-validation-for="AlamatLengkap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
